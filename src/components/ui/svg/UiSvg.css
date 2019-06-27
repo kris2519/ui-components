@@ -1,8 +1,0 @@
-
-.svg-ico {
-	fill: orange;
-	@media (--viewport-test) {
-		width: 10px;
-		height: 10px;
-	}
-}
