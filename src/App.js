@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UiSvg from './components/ui/svg/UiSvg.jsx';
+import UiSvg from './components/ui/svg/UiSvg.js';
 import './styles/base.css';
 
 class App extends Component {

@@ -1,0 +1,15 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+module.system.node.resolve_dirname=src/flow-types
+module.system.node.resolve_dirname=src/action
+suppress_comment= \\(.\\|\n\\)*\\$flow-disable-line
+[strict]
