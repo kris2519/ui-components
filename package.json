@@ -71,11 +71,12 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "prettier --write",
+      "prettier --write src/**/*.{js, jsx}",
       "yarn eslint --c .eslintrc.json"
     ],
     "*.css": [
-      "yarn stylelint --c .stylelintrc.json"
+      "prettier --write src/**/*.css",
+      "stylelint"
     ]
   }
 }
