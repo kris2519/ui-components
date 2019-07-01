@@ -1,6 +1,6 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
           use: false,
           view: false
         }
-      },
+      }
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -33,10 +33,10 @@ module.exports = {
       template: require('html-webpack-template')
     })
   ],
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "/build"),
-    filename: "bundle.js"
+    path: path.join(__dirname, '/build'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -44,8 +44,8 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.css$/,
@@ -61,7 +61,8 @@ module.exports = {
               localsConvention: 'camelCase'
             }
           },
-          {loader: 'postcss-loader',
+          {
+            loader: 'postcss-loader',
             options: {
               plugins: [
                 require('postcss-import')(),
@@ -98,7 +99,7 @@ module.exports = {
             }
           }
         ]
-      },
+      }
     ]
   }
 };

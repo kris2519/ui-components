@@ -1,3 +1,6 @@
 :global .green-icon {
-	background: #ffffff;
+  font-size: rem(14);
+  position: absolute;
+  z-index: 2;
+  background: #ffffff;
 }
