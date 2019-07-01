@@ -73,6 +73,9 @@
     "*.{js,jsx}": [
       "prettier --write",
       "yarn eslint --c .eslintrc.json"
+    ],
+    "*.css": [
+      "yarn stylelint --c .stylelintrc.json"
     ]
   }
 }
