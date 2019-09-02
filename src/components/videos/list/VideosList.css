@@ -1,0 +1,23 @@
+.video-list {
+  display: block;
+  @media (--desktop-small) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.video-item {
+  composes: global-list-item from global;
+  @media (--desktop-small) {
+    width: calc(50% - rem(17));
+  }
+  @media (--mobile-large) {
+    width: 100%;
+  }
+}
+
+.video {
+  display: block;
+  composes: aside-list-item-link hovered-title-color from global;
+}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UiSvg from './components/ui/svg/UiSvg.js';
 import './styles/base.css';
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
         <svg fill="red">
           <use xlinkHref="sprite.svg#instagram" />
         </svg>
-        <UiSvg icon="instagram" klassName="green-icon" />
       </div>
     );
   }

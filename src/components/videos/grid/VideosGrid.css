@@ -1,0 +1,11 @@
+.video-grid {
+  composes: grid-2-col from global;
+}
+
+.video-item {
+  composes: grid-2-col-item from global;
+}
+
+.video {
+  composes: grid-2-col-link hovered-title-color from global;
+}

@@ -1,0 +1,26 @@
+// @flow
+
+export type EventsItemType = {
+  id: string,
+  startOn: string,
+  endOn: string,
+  url: string,
+  discipline: string,
+  icon: {
+    small: string,
+    medium: string
+  },
+  img: {
+    small: string,
+    medium: string
+  },
+  place: string,
+  prize: string,
+  status: string,
+  title: string
+};
+
+export type EventsGroupItemType = {
+  year: string,
+  list: Array<EventsItemType>
+};

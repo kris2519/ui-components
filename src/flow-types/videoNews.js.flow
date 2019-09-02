@@ -1,0 +1,8 @@
+// @flow
+
+export type VideoNewsItemType = {
+  id: string,
+  img: string,
+  title: string,
+  isVideo: boolean
+};

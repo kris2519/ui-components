@@ -2,6 +2,13 @@
 
 @custom-media --viewport-test (max(1200));
 
+:global .green-icon {
+  fill: green;
+  @media (--viewport-test) {
+    background: blue;
+  }
+}
+
 body {
   background: #000000;
   color: #ffffff;
@@ -23,12 +30,5 @@ h1 {
 
   &[class='blue'] {
     color: blue;
-  }
-}
-
-:global .green-icon {
-  fill: green;
-  @media (--viewport-test) {
-    background: blue;
   }
 }

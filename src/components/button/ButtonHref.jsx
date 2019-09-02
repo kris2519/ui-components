@@ -7,29 +7,30 @@ import type { ButtonType } from './ButtonType';
 
 type PropsType = ButtonType;
 
-function Button({
+function ButtonHref({
   children,
   size = 'default',
   type = 'primary',
   icon = null,
   styleClassName,
-  onClick,
+  url,
   isDisabled = false,
   style
 }: PropsType) {
   return (
-    <button
-      type="button"
+    <a
       /* $flow-disable-line */
       className={classNames(style.btn, style[`btn-${type}`], style[`btn-${size}`], styleClassName, {
         [style.isDisabled]: isDisabled
       })}
-      onClick={onClick}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {icon && <Svg icon={icon} styleClassName={style.btnIcon} />}
       <span className={style.btnText}>{children}</span>
-    </button>
+    </a>
   );
 }
 
-export default Button;
+export default ButtonHref;

@@ -1,0 +1,14 @@
+// @flow
+
+import type { PromoImg } from 'flow-types/img';
+
+export type NewsItemType = {
+  id: string,
+  img: PromoImg,
+  title: string,
+  description: string,
+  publishedAt: string,
+  discipline: string,
+  isVideo: boolean,
+  slug: {}
+};

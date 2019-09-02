@@ -6,19 +6,38 @@ type PropsType = {
   img: {
     small: string,
     medium: string,
-    big: string
+    big: string,
+    large: string
+  },
+  maxWidth: {
+    small: string,
+    medium: string,
+    large: string
   },
   alt: string,
-  style: any
+  style: any,
+  isLoaded: boolean
 };
 
-function Img({ img, alt, style }: PropsType) {
+function Img({ img, alt, maxWidth, style, isLoaded }: PropsType) {
   return (
     <picture className={style.imgHolder}>
-      <source srcSet={`${img.small} 1x, ${img.medium} 2x`} media="(max-width: 500px)" />
-      <source srcSet={`${img.medium} 1x, ${img.big} 2x`} media="(max-width: 1440px)" />
-      <source srcSet={`${img.big} 1x, ${img.large} 2x`} media="(max-width: 1920px)" />
-      <img className={style.img} src={img.large} alt={alt} />
+      {!isLoaded ? (
+        <React.Fragment>
+          {maxWidth.small && (
+            <source srcSet={`${img.small} 1x, ${img.medium} 2x`} media={`(max-width: ${maxWidth.small})`} />
+          )}
+          {maxWidth.medium && (
+            <source srcSet={`${img.medium} 1x, ${img.big} 2x`} media={`(max-width: ${maxWidth.medium})`} />
+          )}
+          {maxWidth.large && (
+            <source srcSet={`${img.big} 1x, ${img.large} 2x`} media={`(max-width: ${maxWidth.large})`} />
+          )}
+          <img className={style.img} src={img.big} alt={alt} />
+        </React.Fragment>
+      ) : (
+        <i className={style.imgHolderLoader} />
+      )}
     </picture>
   );
 }

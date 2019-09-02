@@ -1,0 +1,7 @@
+// @flow
+
+export type DisciplinesItemType = {
+  id: string,
+  name: string,
+  value: string
+};

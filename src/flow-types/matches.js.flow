@@ -1,0 +1,27 @@
+// @flow
+
+export type ParticipantType = {
+  name: string,
+  country: string,
+  img: {
+    thumb_36: string,
+    thumb_72: string,
+    thumb_140: string,
+    thumb_270: string
+  },
+  score: number,
+  isWinner: boolean
+};
+
+export type MatchesItemType = {
+  id: string,
+  url: string,
+  discipline: string,
+  hasOnlineBroadcasts: boolean,
+  hasVods: boolean,
+  status: string,
+  system: string,
+  name: string,
+  player: ParticipantType,
+  opponent: ParticipantType
+};
