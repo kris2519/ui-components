@@ -1,15 +1,23 @@
 [ignore]
-
+.*/node_modules/.*
+.*/.storybook/.*
+.*/stories/.*
+.*/workers/.*
+.*/dist/.*
 [include]
 
 [libs]
+./flow-typed/md.js
+./flow-typed/
 
 [lints]
 
 [options]
+module.name_mapper='.*\(.md\)' -> 'md'
+module.name_mapper='classnames' -> 'classnames'
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
-module.system.node.resolve_dirname=src/flow-types
-module.system.node.resolve_dirname=src/action
+module.system.node.resolve_dirname=stories
 suppress_comment= \\(.\\|\n\\)*\\$flow-disable-line
 [strict]
+untyped-type-import

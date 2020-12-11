@@ -1,0 +1,83 @@
+.team-preview-composes {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: var(--team-direction);
+  background-color: var(--light-color);
+}
+
+.team-preview {
+  --team-direction: row;
+  --team-info-text-align: left;
+  --team-flag-margin: 0 rem(10) 0 0;
+
+  composes: team-preview-composes;
+}
+
+.team-preview-reverse {
+  --team-direction: row-reverse;
+  --team-info-text-align: right;
+  --team-flag-margin: 0 0 0 rem(10);
+
+  composes: team-preview-composes;
+}
+
+.img-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 rem(135);
+  width: rem(135);
+  height: rem(135);
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-holder-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-preview-info {
+  flex: 1;
+  width: 100%;
+  padding: rem(15);
+  text-align: var(--team-info-text-align);
+  box-sizing: border-box;
+}
+
+.team-preview-data {
+  display: block;
+}
+
+.team-preview-country {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--team-direction);
+  margin-bottom: rem(5);
+}
+
+.flag {
+  flex: 0 0 rem(22);
+  width: rem(22);
+  height: rem(16);
+  margin: var(--team-flag-margin);
+}
+
+.team-preview-country-name {
+  composes: subtitle-text from global;
+  display: block;
+}
+
+.team-preview-name {
+  composes: body-text to from global;
+}

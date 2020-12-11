@@ -1,0 +1,13 @@
+.list {
+  display: block;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  min-height: rem(50);
+  margin-bottom: rem(10);
+  padding: rem(5) rem(15);
+  background: var(--light-color);
+  box-sizing: border-box;
+}

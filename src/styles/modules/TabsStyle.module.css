@@ -1,0 +1,79 @@
+/* stylelint-disable no-descending-specificity */
+
+.tabs {
+  composes: scrollable-block invisible-scroll from global;
+  display: block;
+  text-align: left;
+  @media (--mobile-large) {
+    display: flex;
+    flex: 1 1 100%;
+    margin: rem(-25) rem(-10) rem(25);
+    box-shadow: inset 0 rem(-1) 0 0 var(--accent-color);
+  }
+}
+
+.tab {
+  display: inline-block;
+  @media (--mobile-large) {
+    flex: 1;
+  }
+
+  &:first-child:last-child {
+    pointer-events: none;
+  }
+
+  &:only-child {
+    pointer-events: none;
+  }
+
+  &:not(:first-child) {
+    margin-left: rem(-1);
+  }
+
+  &:first-child .tab-btn {
+    border-radius: rem(2) 0 0 rem(2);
+  }
+
+  &:last-child .tab-btn {
+    border-radius: 0 rem(2) rem(2) 0;
+  }
+}
+
+.tab-button {
+  --tab-bg: transparent;
+  --tab-color: var(--main-dark-color);
+  --tab-border: var(--secondary-border-color);
+
+  padding: rem(10) rem(35);
+  background: var(--tab-bg);
+  border: rem(1) solid var(--tab-border);
+  box-sizing: border-box;
+  transition: background var(--transition), color var(--transition);
+  overflow: hidden;
+  composes: body-text from global;
+  color: var(--tab-color);
+  @media (--tablet-small) {
+    padding: rem(10) rem(15);
+  }
+  @media (--mobile-large) {
+    width: 100%;
+    border: none;
+  }
+
+  &:hover {
+    --tab-color: var(--accent-color);
+  }
+
+  &.is-active {
+    --tab-bg: var(--accent-color);
+    --tab-color: var(--light-color);
+    --tab-border: var(--accent-color);
+
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.tab-panel {
+  padding-top: rem(15);
+}

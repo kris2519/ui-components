@@ -1,0 +1,80 @@
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: block;
+  margin: 0 rem(10);
+  font-size: 0;
+}
+
+.social {
+  --icon-fill: var(--dark-color);
+
+  composes: tooltip-holder from global;
+  display: inline-block;
+  color: var(--dark-color);
+
+  &:hover {
+    --icon-fill: var(--accent-color);
+  }
+
+  &.mod-fb {
+    --icon-width: rem(40);
+    --icon-height: rem(40);
+  }
+
+  &.mod-twitter {
+    --icon-width: rem(42);
+    --icon-height: rem(38);
+  }
+
+  &.mod-twitch {
+    --icon-width: rem(41);
+    --icon-height: rem(42);
+  }
+
+  &.mod-vk {
+    --icon-width: rem(43);
+    --icon-height: rem(44);
+  }
+
+  &.mod-youtube {
+    --icon-width: rem(44);
+    --icon-height: rem(36);
+  }
+
+  &.mod-instagram {
+    --icon-width: rem(40);
+    --icon-height: rem(40);
+  }
+
+  &.mod-reddit {
+    --icon-width: rem(44);
+    --icon-height: rem(41);
+  }
+
+  &.mod-discord {
+    --icon-width: rem(40);
+    --icon-height: rem(40);
+  }
+
+  &.mod-site {
+    --icon-width: rem(40);
+    --icon-height: rem(40);
+  }
+
+  &.mod-telegram {
+    --icon-width: rem(40);
+    --icon-height: rem(40);
+  }
+}
+
+.social-icon {
+  display: block;
+  fill: var(--icon-fill);
+  transition: fill var(--transition);
+  width: var(--icon-width);
+  height: var(--icon-height);
+}

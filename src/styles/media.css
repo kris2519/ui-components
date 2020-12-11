@@ -1,0 +1,8 @@
+@custom-media --desktop (mediaMax(1680));
+@custom-media --desktop-small (mediaMax(1200));
+@custom-media --tablet-large (mediaMax(1024));
+@custom-media --tablet (mediaMax(968));
+@custom-media --tablet-small (mediaMax(768));
+@custom-media --mobile-large (mediaMax(600));
+@custom-media --mobile-medium (mediaMax(500));
+@custom-media --mobile (mediaMax(414));

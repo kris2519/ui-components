@@ -1,0 +1,29 @@
+/* stylelint-disable */
+
+:global :root {
+  --light-color: #ffffff;
+  --dark-color: #0f1419;
+  --accent-color: #fa2c2c;
+  --main-light-color: #8e9a9e;
+  --main-color: #555e62;
+  --main-dark-color: #2c3438;
+  --light-gray-color: #fbfbfb;
+  --background-color: #f0f3f4;
+  --main-border-color: rgba(151, 151, 151, 0.23);
+  --secondary-border-color: #e7e7e7;
+
+  --main-font: 'Roboto', sans-serif;
+  --main-medium-font: 'Roboto-Medium', sans-serif;
+  --main-bold-font: 'Roboto-Bold', sans-serif;
+
+  --fix-width: rem(1390);
+
+  --transition: 0.2s ease;
+
+  --loading-bg: #ddd;
+  --loading-height: 100%;
+  --loading-gap: 0;
+  --loading-animation-duration: 1.6s;
+  --loading-wrapper-bg: var(--light-color);
+  --loading-shine-bg: rgba(232, 232, 232, 0.5);
+}

@@ -1,0 +1,81 @@
+.player-preview-composes {
+  display: flex;
+  flex-direction: var(--player-direction);
+  background-color: var(--light-color);
+}
+
+.player-preview {
+  --player-direction: row;
+  --player-info-text-align: left;
+  --player-flag-margin: 0 rem(10) 0 0;
+
+  composes: player-preview-composes;
+}
+
+.player-preview-reverse {
+  --player-direction: row-reverse;
+  --player-info-text-align: right;
+  --player-flag-margin: 0 0 0 rem(10);
+
+  composes: player-preview-composes;
+}
+
+.img-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 rem(135);
+  width: rem(135);
+  height: rem(135);
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-holder-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-preview-info {
+  width: 100%;
+  padding: rem(15);
+  text-align: var(--player-info-text-align);
+  box-sizing: border-box;
+}
+
+.player-preview-data {
+  display: block;
+}
+
+.player-preview-description {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--player-direction);
+  margin-bottom: rem(5);
+}
+
+.flag {
+  flex: 0 0 rem(22);
+  width: rem(22);
+  height: rem(16);
+  margin: var(--player-flag-margin);
+}
+
+.player-preview-nickname {
+  composes: subtitle-text from global;
+  display: block;
+}
+
+.player-preview-name {
+  composes: body-text to from global;
+}

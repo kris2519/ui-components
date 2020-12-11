@@ -1,0 +1,33 @@
+:global .tooltip-holder {
+  --tooltip-opacity: 0;
+  --tooltip-visibility: hidden;
+
+  position: relative;
+
+  &:hover {
+    --tooltip-opacity: 1;
+    --tooltip-visibility: visible;
+  }
+}
+
+:global .tooltip {
+  opacity: var(--tooltip-opacity);
+  visibility: var(--tooltip-visibility);
+  transition: opacity var(--transition), var(--transition);
+}
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  padding-left: rem(10);
+}
+
+.tooltip-content {
+  composes: body-text from global;
+  width: rem(150);
+  padding: rem(5) rem(10);
+  background-color: var(--light-color);
+  box-sizing: border-box;
+}

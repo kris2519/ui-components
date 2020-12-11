@@ -1,0 +1,229 @@
+:global .body-caps-text {
+  --body-caps-line-height: rem(25);
+  --body-caps-font-size: rem(18);
+
+  font-family: var(--main-bold-font);
+  font-size: var(--body-caps-font-size);
+  color: var(--main-dark-color);
+  letter-spacing: rem(0.2);
+  line-height: var(--body-caps-line-height) / var(--body-caps-font-size);
+  text-transform: uppercase;
+  @media (--mobile-large) {
+    --body-caps-line-height: rem(20);
+    --body-caps-font-size: rem(16);
+
+    letter-spacing: rem(0.18);
+  }
+
+  &.is-loading {
+    --loading-height: var(--body-caps-font-size);
+    --loading-gap: var(--body-caps-line-height);
+
+    min-height: var(--body-caps-line-height);
+  }
+}
+
+:global .body-caps-decent-text {
+  --body-caps-decent-line-height: rem(25);
+  --body-caps-decent-font-size: rem(18);
+
+  font-family: var(--main-bold-font);
+  color: var(--main-light-color);
+  letter-spacing: rem(0.2);
+  font-size: var(--body-caps-decent-font-size);
+  line-height: var(--body-caps-decent-line-height) / var(--body-caps-decent-font-size);
+  text-transform: uppercase;
+
+  &.is-loading {
+    --loading-height: var(--body-caps-decent-font-size);
+    --loading-gap: var(--body-caps-decent-line-height);
+
+    min-height: var(--body-caps-decent-line-height);
+  }
+}
+
+:global .subtitle-text {
+  --subtitle-text-line-height: rem(20);
+  --subtitle-text-font-size: rem(14);
+
+  font-family: var(--main-medium-font);
+  color: var(--main-light-color);
+  letter-spacing: rem(0.2);
+  font-size: var(--subtitle-text-font-size);
+  line-height: var(--subtitle-text-line-height) / var(--subtitle-text-font-size);
+  text-transform: uppercase;
+  @media (--mobile-large) {
+    --subtitle-text-line-height: rem(15);
+    --subtitle-text-font-size: rem(12);
+
+    letter-spacing: rem(0.17);
+  }
+
+  &.is-loading {
+    --loading-height: var(--subtitle-text-font-size);
+    --loading-gap: var(--subtitle-text-line-height);
+
+    min-height: var(--subtitle-text-line-height);
+  }
+}
+
+:global .subtitle-accent-text {
+  --subtitle-accent-text-line-height: rem(20);
+  --subtitle-accent-text-font-size: rem(14);
+
+  font-family: var(--main-medium-font);
+  color: var(--accent-color);
+  letter-spacing: rem(0.2);
+  font-size: var(--subtitle-accent-text-font-size);
+  line-height: var(--subtitle-accent-text-line-height) / var(--subtitle-accent-text-font-size);
+  text-transform: uppercase;
+
+  &.is-loading {
+    --loading-height: var(--subtitle-accent-text-font-size);
+    --loading-gap: var(--subtitle-accent-text-line-height);
+
+    min-height: var(--subtitle-accent-text-line-height);
+  }
+}
+
+:global .header-2-text {
+  --header-2-line-height: rem(43);
+  --header-2-font-size: rem(36);
+
+  font-family: var(--main-bold-font);
+  color: var(--main-dark-color);
+  letter-spacing: 0;
+  font-size: var(--header-2-font-size);
+  line-height: var(--header-2-line-height) / var(--header-2-font-size);
+  min-height: var(--header-2-line-height);
+
+  &.is-loading {
+    --loading-height: var(--header-2-font-size);
+    --loading-gap: var(--header-2-line-height);
+
+    min-height: var(--header-2-line-height);
+  }
+}
+
+:global .header-3-text {
+  --header-3-line-height: rem(38);
+  --header-3-font-size: rem(32);
+
+  font-family: var(--main-bold-font);
+  font-size: var(--header-3-font-size);
+  line-height: var(--header-3-line-height) / var(--header-3-font-size);
+  color: var(--accent-color);
+  letter-spacing: 0;
+  @media (--mobile-large) {
+    --header-3-line-height: rem(25);
+    --header-3-font-size: rem(21);
+  }
+
+  &.is-loading {
+    --loading-height: var(--header-3-font-size);
+    --loading-gap: var(--header-3-line-height);
+
+    min-height: var(--header-3-line-height);
+  }
+}
+
+:global .body-text {
+  --body-text-line-height: rem(25);
+  --body-text-font-size: rem(18);
+
+  font-family: var(--main-medium-font);
+  color: var(--main-dark-color);
+  letter-spacing: rem(0.2);
+  font-size: var(--body-text-font-size);
+  line-height: var(--body-text-line-height) / var(--body-text-font-size);
+  @media (--mobile-large) {
+    --body-text-line-height: rem(25);
+    --body-text-font-size: rem(16);
+
+    letter-spacing: rem(0.18);
+  }
+
+  &.is-loading {
+    --loading-height: var(--body-text-font-size);
+    --loading-gap: var(--body-text-line-height);
+
+    min-height: var(--body-text-line-height);
+  }
+}
+
+:global .body-decent-text {
+  --body-decent-text-line-height: rem(25);
+  --body-decent-text-font-size: rem(16);
+
+  font-family: var(--main-font);
+  color: var(--main-color);
+  letter-spacing: 0;
+  font-size: var(--body-decent-text-font-size);
+  line-height: var(--body-decent-text-line-height) / var(--body-decent-text-font-size);
+  @media (--mobile-large) {
+    --body-decent-text-line-height: rem(25);
+    --body-decent-text-font-size: rem(14);
+  }
+
+  &.is-loading {
+    --loading-height: var(--body-decent-text-font-size);
+    --loading-gap: var(--body-decent-text-line-height);
+
+    min-height: var(--body-decent-text-line-height);
+  }
+}
+
+:global .body-white-text {
+  --body-white-text-line-height: rem(25);
+  --body-white-text-font-size: rem(18);
+
+  font-family: var(--main-bold-font);
+  color: var(--background-color);
+  letter-spacing: 0;
+  text-align: left;
+  font-size: var(--body-white-text-font-size);
+  line-height: var(--body-white-text-line-height) / var(--body-white-text-font-size);
+
+  &.is-loading {
+    --loading-height: var(--body-white-text-font-size);
+    --loading-gap: var(--body-white-text-line-height);
+
+    min-height: var(--body-white-text-line-height);
+  }
+}
+
+:global .button-text {
+  font-family: var(--main-bold-font);
+  font-size: rem(14);
+  color: var(--main-dark-color);
+  letter-spacing: rem(3.5);
+  line-height: lh(15, 14);
+  text-transform: uppercase;
+  @media (--mobile-large) {
+    font-size: rem(12);
+    line-height: lh(15, 12);
+    letter-spacing: rem(3);
+  }
+
+  &.is-loading {
+    height: rem(14);
+  }
+}
+
+:global .button-accent-text {
+  font-family: var(--main-bold-font);
+  font-size: rem(14);
+  color: var(--accent-color);
+  letter-spacing: rem(3.5);
+  line-height: lh(15, 14);
+  text-transform: uppercase;
+  @media (--mobile-large) {
+    font-size: rem(12);
+    line-height: lh(15, 12);
+    letter-spacing: rem(3);
+  }
+
+  &.is-loading {
+    height: rem(14);
+  }
+}

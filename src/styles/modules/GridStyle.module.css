@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: rem(20);
+}
+
+.grid-item {
+  min-width: 0;
+  padding: rem(15);
+  background-color: var(--light-color);
+}

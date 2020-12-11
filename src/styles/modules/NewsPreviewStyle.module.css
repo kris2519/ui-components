@@ -1,0 +1,139 @@
+.news-preview {
+  composes: hovered-title-color from global;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: rem(15);
+  background-color: var(--light-color);
+  box-sizing: border-box;
+}
+
+.news-preview-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: percentage(627, 304);
+  margin-bottom: rem(25);
+  border-radius: rem(2);
+  overflow: hidden;
+  @media (--mobile-large) {
+    margin-bottom: rem(15);
+  }
+}
+
+.img-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-holder-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-video-icon-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(60);
+  height: rem(60);
+}
+
+.news-video-icon {
+  display: block;
+  width: rem(57);
+  height: rem(40);
+  fill: var(--accent-color);
+}
+
+.news-preview-info {
+  display: block;
+}
+
+.news-preview-data {
+  display: block;
+  margin-bottom: rem(15);
+  composes: subtitle-accent-text from global;
+  @media (--mobile-large) {
+    margin-bottom: rem(10);
+  }
+
+  &:global.is-loading {
+    width: 30%;
+  }
+}
+
+.news-preview-date {
+  display: inline-block;
+}
+
+.news-preview-discipline {
+  position: relative;
+  display: inline-block;
+  margin-left: rem(5);
+
+  &:before {
+    content: '/';
+    margin-right: rem(5);
+  }
+}
+
+.news-preview-title {
+  composes: header-2-text to-wrap from global;
+  display: block;
+  max-height: rem(129);
+  margin-bottom: rem(15);
+  flex: 1;
+  color: var(--hovered-title-color);
+  transition: color var(--transition);
+  @media (--desktop-small) {
+    max-height: rem(50);
+    font-size: rem(21);
+    line-height: lh(25, 21);
+    letter-spacing: 0;
+  }
+  @media (--mobile-large) {
+    margin-bottom: rem(10);
+  }
+
+  &:global.is-loading {
+    background: red;
+  }
+}
+
+.news-preview-description {
+  composes: body-decent-text to-wrap from global;
+  display: block;
+  max-height: rem(100);
+  flex: 0 1 auto;
+
+  &:global.is-loading {
+    height: rem(75);
+  }
+}
+
+.news-preview-link {
+  composes: button-accent-text from global;
+  display: block;
+  margin-top: rem(20);
+}

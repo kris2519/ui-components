@@ -1,0 +1,36 @@
+.section {
+  display: block;
+  width: 100%;
+  margin-bottom: rem(90);
+  margin-top: rem(85);
+  padding: 0 rem(35);
+  background-color: var(--light-color);
+  border-radius: rem(2);
+  box-shadow: 0 rem(5) rem(15) 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  &.mod-static-view {
+    max-width: rem(1130);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.section-nav {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  &.mod-top {
+    height: rem(110);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: rem(2) solid var(--accent-color);
+  }
+
+  &.mod-bottom {
+    justify-content: center;
+    height: rem(105);
+    border-top: rem(1) solid var(--main-border-color);
+  }
+}

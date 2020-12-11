@@ -1,0 +1,34 @@
+.article {
+  display: block;
+  background-color: var(--light-color);
+  padding: rem(55) rem(20);
+  text-align: left;
+  @media (--tablet) {
+    padding: rem(40) rem(20);
+  }
+  @media (--mobile-large) {
+    padding: rem(10);
+  }
+}
+
+.article-info {
+  display: block;
+  margin-bottom: rem(15);
+  composes: subtitle-accent-text from global;
+
+  &:global.is-loading {
+    width: 30%;
+  }
+}
+
+.article-title {
+  display: block;
+  margin-bottom: rem(15);
+  composes: header-2-text to-wrap from global;
+}
+
+.article-description {
+  display: block;
+  composes: body-text from global;
+  margin-bottom: rem(30);
+}

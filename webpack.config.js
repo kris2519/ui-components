@@ -1,17 +1,54 @@
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
+// noinspection JSAnnotator
 module.exports = {
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'build'),
-    compress: true,
-    port: 8080
+  mode: 'production',
+  entry: {
+    entry: ['@babel/polyfill', 'index.js']
+  },
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'main.js',
+    library: '',
+    libraryTarget: 'commonjs'
+  },
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom'
+  },
+  resolve: {
+    modules: [path.resolve(__dirname, './src'), 'node_modules'],
+    extensions: ['.js', '.jsx', '.css', '.md']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        include: [path.resolve(__dirname, './src')],
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        exclude: /\.module\.css$/
+      }
+    ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist')]
+    }),
+    new webpack.ProgressPlugin(),
     new SVGSpritemapPlugin('src/images/sprite/**/*.svg', {
       output: {
         filename: 'sprite.svg',
@@ -27,79 +64,24 @@ module.exports = {
         }
       }
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      appMountId: 'app',
-      template: require('html-webpack-template')
-    })
-  ],
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname, '/build'),
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
+    new MiniCssExtractPlugin({
+      filename: 'base.css'
+    }),
+    new CopyPlugin(
+      [
+        {
+          context: 'src/styles/modules/',
+          from: '*.module.css',
+          to: 'styles/'
         }
-      },
+      ],
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[local]__[hash:base64:5]'
-              },
-              importLoaders: 1,
-              localsConvention: 'camelCase'
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [
-                require('postcss-import')(),
-                require('postcss-preset-env')({
-                  stage: 1,
-                  features: {
-                    'nesting-rules': true
-                  }
-                }),
-                require('postcss-functions')({
-                  functions: {
-                    rem(val) {
-                      return `${val / 16}rem`;
-                    },
-                    max(val) {
-                      return `max-width:${val / 16}rem`;
-                    },
-                    lh(lh, fsz) {
-                      return lh / fsz;
-                    },
-                    ls(val) {
-                      return `${val / 1000}rem`;
-                    },
-                    column(val) {
-                      return `${100 / val}%`;
-                    },
-                    percentage(i, e) {
-                      return `${(e * 100) / i}%`;
-                    }
-                  }
-                }),
-                require('cssnano')()
-              ]
-            }
-          }
-        ]
+        copyUnmodified: true
       }
-    ]
+    )
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({ cache: true, parallel: true })]
   }
 };

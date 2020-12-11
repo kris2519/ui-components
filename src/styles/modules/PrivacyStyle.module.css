@@ -1,0 +1,42 @@
+.privacy-notification-holder {
+  position: fixed;
+  left: rem(15);
+  bottom: rem(15);
+  z-index: 1000;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.privacy-notification {
+  display: block;
+  width: rem(380);
+  padding: rem(15);
+  text-align: left;
+  background: var(--background-color);
+  border: rem(1) solid var(--secondary-border-color);
+  border-radius: rem(2);
+  box-sizing: border-box;
+  box-shadow: 0 rem(5) rem(15) 0 rgba(0, 0, 0, 0.05);
+}
+
+.privacy-notification-title {
+  composes: body-text from global;
+  display: block;
+  margin-bottom: rem(10);
+}
+
+.privacy-notification-text {
+  composes: body-decent-text from global;
+  display: block;
+  margin-bottom: rem(15);
+  font-family: var(--main-font);
+}
+
+.privacy-notification-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.privacy-notification-btn {
+}

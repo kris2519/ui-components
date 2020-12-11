@@ -1,0 +1,134 @@
+.timezones {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  max-width: rem(240);
+  padding: rem(10) rem(15);
+  background: var(--dark-color);
+  box-sizing: border-box;
+  @media (--tablet) {
+    margin-left: 0;
+  }
+}
+
+.current-timezone {
+  --current-timezone-color: var(--light-color);
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @media (--tablet) {
+    padding: 0 rem(20);
+    height: rem(52);
+  }
+
+  &.is-active {
+    --current-timezone-color: var(--accent-color);
+  }
+}
+
+.current-timezone-icon {
+  width: rem(20);
+  height: rem(20);
+  fill: var(--current-timezone-color);
+  transition: fill var(--transition);
+}
+
+.current-timezone-arrow {
+  width: rem(20);
+  height: rem(20);
+  fill: var(--current-timezone-color);
+  transition: fill var(--transition);
+}
+
+.current-timezone-time {
+  composes: body-white-text from global;
+  display: block;
+  min-width: rem(62);
+  padding-left: rem(15);
+  color: var(--current-timezone-color);
+  text-align: left;
+  transition: color var(--transition);
+  box-sizing: border-box;
+}
+
+.timezones-dd {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: rem(240);
+  margin-top: rem(22);
+  text-align: right;
+  transition: opacity var(--transition), visibility var(--transition), max-height var(--transition);
+  @media (--tablet) {
+    position: relative;
+    top: auto;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    @media (--tablet) {
+      max-height: rem(300);
+    }
+  }
+}
+
+.timezones-list {
+  composes: dd-list from global;
+  display: block;
+  @media (--tablet) {
+    padding: 0;
+  }
+}
+
+.timezones-item {
+  --timezone-dd-color: var(--light-color);
+
+  composes: dd-item from global;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @media (--tablet) {
+    min-height: rem(48);
+    padding: rem(5) rem(20);
+  }
+
+  &.is-active {
+    --timezone-dd-color: var(--accent-color);
+  }
+
+  &.mod-now {
+    pointer-events: none;
+  }
+}
+
+.timezones-item-title {
+  composes: body-white-text from global;
+  display: block;
+  color: var(--timezone-dd-color);
+  @media (--tablet) {
+    padding: 0;
+  }
+}
+
+.timezones-item-val {
+  composes: body-white-text from global;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: var(--timezone-dd-color);
+  box-sizing: border-box;
+  @media (--tablet) {
+    padding: 0;
+  }
+}

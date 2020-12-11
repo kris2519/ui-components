@@ -1,0 +1,23 @@
+:global .global-list {
+  display: block;
+}
+
+:global .global-list-item {
+  width: 100%;
+  border-bottom: rem(1) solid var(--main-border-color);
+
+  &:last-child {
+    @media (--mobile-large) {
+      border-bottom: none;
+    }
+  }
+}
+
+:global .aside-list-item-link {
+  padding-top: rem(25);
+  padding-bottom: rem(25);
+  @media (--mobile-large) {
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+  }
+}

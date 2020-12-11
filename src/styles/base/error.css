@@ -1,0 +1,108 @@
+.error-view-holder {
+  width: 100%;
+  max-width: rem(966);
+  margin: 0 auto;
+  padding: rem(135) 0;
+  @media (--mobile-large) {
+    padding: rem(40) 0;
+  }
+}
+
+.error-view {
+  display: block;
+  padding: rem(74) rem(74) rem(50) rem(74);
+  background: var(--light-color);
+  box-shadow: 0 rem(5) rem(15) 0 rgba(0, 0, 0, 0.1);
+  border-radius: rem(2);
+  text-align: center;
+  box-sizing: border-box;
+  @media (--tablet-small) {
+    padding: rem(50) rem(40);
+  }
+  @media (--mobile-large) {
+    padding: rem(30) rem(20);
+  }
+}
+
+.error-view-title {
+  display: block;
+  margin-bottom: rem(15);
+  font-family: var(--main-bold-font);
+  font-size: rem(36);
+  line-height: lh(43, 36);
+  letter-spacing: 0;
+  color: var(--main-dark-color);
+  @media (--mobile-large) {
+    font-size: rem(21);
+    line-height: lh(25, 21);
+  }
+}
+
+.error-view-number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(156);
+  height: rem(116);
+  margin: 0 auto rem(50);
+  padding-top: rem(23);
+  font-family: var(--main-bold-font);
+  font-size: rem(32);
+  color: var(--accent-color);
+  letter-spacing: 0;
+  border: rem(4) solid var(--main-dark-color);
+  border-radius: rem(8);
+  box-sizing: border-box;
+  @media (--mobile-large) {
+    width: rem(130);
+    height: rem(90);
+    margin: 0 auto rem(30);
+    font-size: rem(28);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: rem(18);
+    width: 100%;
+    height: rem(4);
+    background: var(--main-dark-color);
+  }
+}
+
+.error-view-description {
+  display: block;
+  margin-bottom: rem(70);
+  font-family: var(--main-font);
+  font-size: rem(16);
+  line-height: lh(25, 16);
+  color: var(--main-color);
+  letter-spacing: 0;
+  text-align: center;
+  @media (--mobile-large) {
+    margin-bottom: rem(40);
+  }
+}
+
+.error-view-link {
+  display: inline-block;
+  width: auto;
+  font-family: var(--main-bold-font);
+  font-size: rem(14);
+  color: var(--accent-color);
+  letter-spacing: rem(3.5);
+  line-height: lh(20, 14);
+  border-bottom: rem(1) solid transparent;
+  transition: border 0.2s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  @media (--mobile-large) {
+    letter-spacing: rem(2.5);
+  }
+
+  &:hover {
+    border-bottom-color: var(--accent-color);
+  }
+}
