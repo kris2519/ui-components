@@ -1,15 +1,8 @@
-# ui-react
+# ui-components
 
 Components library for react projects
 
 Current version 1.3.15
-
-## Installation
-
-```bash
-yarn add @starladder/ui-react
-npm i -D @starladder/ui-react
-```
 
 ## To run local
 ```bash
@@ -22,7 +15,7 @@ yarn storybook
 ####Quick start
 ```jsx harmony
 import React from 'react';
-import { Grid } from '@starladder/ui-react';
+import { Grid } from 'ui-components';
 
 function MyComponentWithGrid() {
   return <Grid>Grid content</Grid>;
@@ -34,7 +27,7 @@ export default MyComponentWithGrid;
 ####CSS Base
 
 ```jsx harmony
-import '@starladder/ui-react/dist/base.css';
+import 'ui-components/dist/base.css';
 ```
 
 base.css consist of
@@ -48,8 +41,8 @@ base.css consist of
 
 ```jsx harmony
 import React from 'react';
-import { Grid } from '@starladder/ui-react';
-import style from '@starladder/ui-react/dist/styles/GridStyle.module.css';
+import { Grid } from 'ui-components';
+import style from 'ui-components/dist/styles/GridStyle.module.css';
 
 function MyComponentWithGrid() {
   return <Grid style={style}>Grid content</Grid>;
